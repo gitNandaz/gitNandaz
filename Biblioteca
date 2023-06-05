@@ -1,0 +1,70 @@
+package biblioteca;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class Biblioteca {
+
+   
+    public static void main(String[] args) {
+      
+        Funcionario funcionario = new Funcionario();
+        Editora editora = new Editora();
+        Livro livro = new Livro();
+        Usuario usuario = new Usuario();
+        Emprestimo emprestimo = new Emprestimo();
+
+       
+        Scanner leitor = new Scanner(System.in);
+       
+       while(true){
+            System.out.println("------------------");
+            System.out.println("Bem-Vindo ao Sistema");            
+            System.out.println("-1 Funcionario");
+            System.out.println("-2 Editora");
+            System.out.println("-3 Livro");
+            System.out.println("-4 Usuario");
+            System.out.println("-5 Emprestimo");
+            System.out.println("-0 Sair\n");
+            System.out.println("Digite a opcao desejada:\n");
+           
+            int op = Integer.parseInt(leitor.nextLine());
+            
+            switch(op){
+            
+            case 1:{
+            funcionario.cadastrarFuncionario();
+                 
+            }break;
+            case 2:{
+            editora.cadastrarEditora();
+                }
+            break;
+            case 3:{
+           livro.cadastrarLivro();
+            
+            }break;
+            case 4:{
+              usuario.cadastrarUsuario();
+                
+            }break;
+            case 5:{
+               emprestimo.cadastrarEmprestimo(usuario, livro);
+            }break;
+            case 0: {
+                    System.out.println("\nDesligando Sistema\n");
+                    System.exit(0);
+                }break ;
+                
+                 default:{
+                    System.out.print("\nOpcao Invalida!\n");
+                }break;
+            
+            }
+        
+       
+        
+        }
+   
+    }
+    }
